@@ -25,4 +25,4 @@ rm -rf docs/.vuepress/dist
 msg="提交修改文章"
 git add .
 git commit -m "${msg}"
-git push origin master
+git push origin main
