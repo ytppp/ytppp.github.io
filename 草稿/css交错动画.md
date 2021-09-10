@@ -1,12 +1,10 @@
 ---
 title: css交错动画
-categories: 
+categories:
   - 前端
   - HTML与CSS
-tags: 
+tags:
   - css
-date: 2021-03-09 14:04:38
-permalink: /pages/85ab5c/
 ---
 
 # css 交错动画
