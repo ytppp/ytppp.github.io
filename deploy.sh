@@ -26,4 +26,4 @@ msg="deploy"
 githubUrl=git@github.com:ytppp/ytpblog-static.git
 git add .
 git commit -m "${msg}"
-git push $githubUrl main
+git push -f $githubUrl main
