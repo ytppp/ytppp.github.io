@@ -23,7 +23,6 @@ rm -rf docs/.vuepress/dist
 
 # 提交修改代码
 msg="deploy"
-githubUrl=git@github.com:ytppp/ytpblog-static.git
 git add .
 git commit -m "${msg}"
-git push -f $githubUrl main
+git push origin main
