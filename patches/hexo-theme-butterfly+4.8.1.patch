@@ -1,0 +1,25 @@
+diff --git a/node_modules/hexo-theme-butterfly/layout/includes/layout.pug b/node_modules/hexo-theme-butterfly/layout/includes/layout.pug
+index dde47c5..3d5adf3 100644
+--- a/node_modules/hexo-theme-butterfly/layout/includes/layout.pug
++++ b/node_modules/hexo-theme-butterfly/layout/includes/layout.pug
+@@ -37,7 +37,7 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
+         else
+           - var footer_bg = ''
+ 
+-        footer#footer(style=footer_bg)
++        footer#footer(style='background: transparent')
+           !=partial('includes/footer', {}, {cache: true})
+ 
+     else
+diff --git a/node_modules/hexo-theme-butterfly/source/css/_mode/darkmode.styl b/node_modules/hexo-theme-butterfly/source/css/_mode/darkmode.styl
+index 680ad3f..dc5cd7a 100644
+--- a/node_modules/hexo-theme-butterfly/source/css/_mode/darkmode.styl
++++ b/node_modules/hexo-theme-butterfly/source/css/_mode/darkmode.styl
+@@ -40,7 +40,6 @@ if hexo-config('darkmode.enable') || hexo-config('display_mode') == 'dark'
+     --timeline-bg: lighten(#121212, 5)
+ 
+     #web_bg:before,
+-    #footer:before,
+     #page-header:before
+       position: absolute
+       width: 100%
