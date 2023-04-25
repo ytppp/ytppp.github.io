@@ -223,7 +223,7 @@ aside:
     category: true
   card_author:
     enable: true
-    description: 曾记否，到中流击水，浪遏飞舟？
+    description: 兴，百姓苦；亡，百姓苦。
     button:
       enable: true
       icon: fab fa-github
@@ -245,12 +245,12 @@ aside:
   card_tags:
     enable: true
     limit: 40 # if set 0 will show all
-    color: false
+    color: true
     orderby: random # Order of tags, random/name/length
     order: 1 # Sort of order. 1, asc for ascending; -1, desc for descending
     sort_order: # Don't modify the setting unless you know how it works
   card_archives:
-    enable: true
+    enable: false
     type: monthly # yearly or monthly
     format: MMMM YYYY # eg: YYYY年MM月
     order: -1 # Sort of order. 1, asc for ascending; -1, desc for descending
@@ -637,7 +637,8 @@ tag_ui: # 留空或 index
 # Website Background (設置網站背景)
 # can set it to color or image (可設置圖片 或者 顔色)
 # The formal of image: url(http://xxxxxx.com/xxx.jpg)
-background: url(https://cdn.jsdelivr.net/gh/youngjuning/images@main/1680450445599.png)
+background: 
+# url(https://cdn.jsdelivr.net/gh/youngjuning/images@main/1680450445599.png)
 
 # Footer Background
 footer_bg: false

@@ -3,8 +3,8 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: ytp'blog
-subtitle: 杨庭培的博客
+title: 杨庭培的博客
+subtitle: 曾记否，到中流击水，浪遏飞舟？
 description: 记录分享美好生活、学习笔记、工作经验、编程开发技巧等，总之在这里你会发现了一个兴趣广泛且爱折腾的程序员。
 keywords:
   - 计算机
@@ -102,6 +102,70 @@ ignore:
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
+# https://github.com/hexojs/hexo-generator-sitemap
+sitemap:
+  path: sitemap.xml
+  rel: true
+# https://github.com/hexojs/hexo-generator-feed
+feed:
+  type:
+    - atom
+    - rss2
+  path:
+    - atom.xml
+    - rss2.xml
+  limit: false
+# https://github.com/hexojs/hexo-filter-nofollow 
+nofollow:
+  enable: true
+  field: site
+# https://github.com/Lete114/hexo-minify 安装不了该插件，暂时注释
+# minify:
+#   preview: false ## 本地预览时是否压缩
+#   exclude: ['*.min.*']
+#   js:
+#     enable: true
+#     ## 详细配置: https://github.com/terser/terser#minify-options
+#     options: {}
+#   css:
+#     enable: true
+#     ## 详细配置: https://github.com/clean-css/clean-css#compatibility-modes
+#     options: {}
+#   html:
+#     enable: true
+#     ## 详细配置: https://github.com/kangax/html-minifier#options-quick-reference
+#     options:
+#       minifyJS: true # Compressed JavaScript
+#       minifyCSS: true # CSS Compressed
+#       removeComments: true # Remove the comments
+#       collapseWhitespace: true # Delete any extra space
+#       removeAttributeQuotes: true # Delete attribute quotes
+#   image:
+#     enable: true
+#     svg:
+#       enable: true
+#       ## 详细配置: https://github.com/imagemin/imagemin-svgo#imageminsvgooptionsbuffer
+#       options: {}
+#     jpg:
+#       enable: true
+#       ## 详细配置: https://github.com/imagemin/imagemin-jpegtran#options
+#       options: {}
+#     png:
+#       enable: true
+#       ## 详细配置: https://github.com/imagemin/imagemin-pngquant#options
+#       options: {}
+#     gif:
+#       enable: true
+#       ## 详细配置: https://www.npmjs.com/package/imagemin-gifsicle#options
+#       options: {}
+#     webp:
+#       enable: true
+#       ## 详细配置: https://github.com/imagemin/imagemin-webp#options
+#       options: {}
+#   font:
+#     enable: true
+#     ## 详细配置: https://github.com/Lete114/fontmin-spider#api
+#     options: {}
 # hexo-butterfly-swiper
 # see https://akilar.top/posts/8e1264d1/
 swiper:
@@ -125,121 +189,31 @@ footer_beautify:
   priority: 5 #过滤器优先权
   enable_page: all # 应用页面
   layout: # 挂载容器类型
-      type: id
-      name: footer
-      index: 1
+    type: id
+    name: footer
+    index: 1
   footer_icons:
     enable: true
     left:
-      - icon: fa-solid fa-compass
-        link: https://youngjuning.js.org/
-        desrc: 个人主页
-        class: out
-      - icon: fa-brands fa-qq
-        link: https://res.abeim.cn/api/qq/?qq=2252484287
-        desrc: 联系QQ
-        class: out
-      - icon: fa-brands fa-weixin
-        link: https://cdn.jsdelivr.net/gh/youngjuning/images/202109211725265.png
-        desrc: 联系微信
-        class: in
       - icon: fa-solid fa-envelope
         link: mailto:luozhu2021@gmail.com
         desrc: 发送邮件
         class: out
     right:
       - icon: fa-brands fa-github
-        link: https://github.com/youngjuning
+        link: https://github.com/ytppp
         desrc: Github主页
-        class: out
-      - icon: fab fa-npm
-        link: https://www.npmjs.com/~youngjuning
-        desrc: NPM
-        class: out
-      - icon: fa-brands fa-bilibili
-        link: https://space.bilibili.com/52457741
-        desrc: 哔哩哔哩主页
-        class: out
-      - icon: fab fa-twitter
-        link: https://twitter.com/luozhu2021
-        desrc: 推特主页
         class: out
   footer_logo:
     enable: true
-    url: https://cdn.jsdelivr.net/gh/youngjuning/images@main/1680450378978.png
+    url: /img/logo.png
   footer_group:
     enable: true
     footer_group_link:
-      - group_title: 导航
-        footer_links:
-          - text: 前端导航
-            link: /frontend/
-            class: in
-          - text: 工具导航
-            link: /tool/
-            class: in
-          - text: 跨境导航
-            link: /oversea/
-            class: in
-          - text: 营销导航
-            link: /yingxiao/
-            class: in
-          - text: 网赚导航
-            link: /wangzhuan/
-            class: in
-          - text: 站长导航
-            link: /webmaster/
-            class: in
-          - text: 科学上网
-            link: /vpn/
-            class: in
-      - group_title: 关于
-        footer_links:
-          - text: 关于我
-            link: /about/
-            class: in
-          - text: RSS订阅
-            link: /atom.xml
-            class: in
-          - text: 站点监控
-            link: https://www.githubstatus.com/
-            class: out
-          - text: 时间轴
-            link: /timeline/
-            class: in
-          - text: 我的相册
-            link: /album/
-            class: in
-      - group_title: 分类
-        footer_links:
-          - text: 前端
-            link: /categories/前端/
-            class: in
-          - text: 副业
-            link: /categories/副业/
-            class: in
-          - text: 漫谈
-            link: /categories/漫谈/
-            class: in
-          - text: 加密货币
-            link: /categories/加密货币/
-            class: in
-          - text: 站点运营
-            link: /categories/站点运营/
-            class: in
-          - text: 查看全部
-            link: /categories/
-            class: in
       - group_title: 时间轴
         footer_links:
-          - text: 洛竹
-            link: /timeline/luozhu/
-            class: in
-          - text: ChatGPT
-            link: /timeline/chatgpt/
-            class: in
-          - text: 狗狗币
-            link: /timeline/doge/
+          - text: 归档
+            link: /archives/
             class: in
   footer_friend_links:
     enable: false
@@ -247,23 +221,10 @@ footer_beautify:
   footer_bottom:
     copyright:
       enable: true
-      author: 洛竹
-      link: https://youngjuning.js.org/
+      author: ytp
+      link: https://yangtp.com/
       time: 2021
     left:
-      - text: Github
-        desrc: 本站托管服务
-        link: https://github.com/
-        icon: fa-brands fa-qq
-      - text: jsDelivr
-        desrc: 本站 CDN 支持
-        link: https://www.jsdelivr.com/
-      - text: Gallery
-        desrc: 本站图床支持
-        link: /gallery/
-      - text: JS ORG
-        desrc: 本站域名支持
-        link: https://js.org/
       - text: RSS2
         desrc: 本站 RSS2 订阅链接
         link: /rss2.xml
