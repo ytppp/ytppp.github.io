@@ -3,7 +3,7 @@
 # --------------------------------------
 
 nav:
-  logo: /img/logo.png
+  logo: https://cdn.jsdelivr.net/gh/ytppp/ytpblog-static-source-store/img/logo.png
   display_title: true
   fixed: false # fixed navigation bar
 
@@ -37,21 +37,21 @@ social:
 # --------------------------------------
 
 # Favicon（網站圖標）
-favicon: /img/favicon.ico
+favicon: https://cdn.jsdelivr.net/gh/ytppp/ytpblog-static-source-store/source/favicon.ico
 
 # Avatar (頭像)
 avatar:
-  img: /img/logo.png
+  img: https://cdn.jsdelivr.net/gh/ytppp/ytpblog-static-source-store/img/logo.png
   effect: false
 
 # Disable all banner image
 disable_top_img: false
 
 # The banner image of home page
-index_img: /img/bg.jpg
+index_img: https://cdn.jsdelivr.net/gh/ytppp/ytpblog-static-source-store/img/4bba972a094eb1bdc8cbbc55e2bd4ddf.jpg
 
 # If the banner of page not setting, it will show the top_img
-default_top_img: /img/bg.jpeg
+default_top_img: https://cdn.jsdelivr.net/gh/ytppp/ytpblog-static-source-store/source/bg.jpg
 
 # The banner image of archive page
 archive_img:

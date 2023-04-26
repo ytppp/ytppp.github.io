@@ -13,7 +13,7 @@ keywords:
   - 编程开发
   - 学习笔记
   - 前端开发
-author: ytp
+author: 杨庭培
 language: zh-CN
 timezone: Asia/Shanghai
 
@@ -119,7 +119,7 @@ feed:
 nofollow:
   enable: true
   field: site
-# https://github.com/Lete114/hexo-minify 安装不了该插件，暂时注释
+# https://github.com/Lete114/hexo-minify 安装不了该插件，暂不用
 # minify:
 #   preview: false ## 本地预览时是否压缩
 #   exclude: ['*.min.*']
@@ -193,7 +193,7 @@ footer_beautify:
     name: footer
     index: 1
   footer_icons:
-    enable: true
+    enable: false
     left:
       - icon: fa-solid fa-envelope
         link: mailto:luozhu2021@gmail.com
@@ -206,7 +206,7 @@ footer_beautify:
         class: out
   footer_logo:
     enable: true
-    url: /img/logo.png
+    url: https://cdn.jsdelivr.net/gh/ytppp/ytpblog-static-source-store/img/logo.png
   footer_group:
     enable: true
     footer_group_link:
