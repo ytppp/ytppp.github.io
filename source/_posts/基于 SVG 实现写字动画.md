@@ -7,7 +7,6 @@ date: 2021-07-09 14:24:36
 categories: 
   - 前端
 tags: 
-  - 前端
   - SVG
 ---
 
@@ -369,6 +368,6 @@ strokeLetter(paths[0], strokes[0]);
 5. [svg 动画以描边以及文字书写 使用](https://blog.csdn.net/chao2458/article/details/84983203)
 6. [SVG 之 ViewBox](https://segmentfault.com/a/1190000009226427?utm_source=tag-newest)
 
-最后，这个系列项目的 github 地址：[native-web-projects](https://github.com/ytppp/native-web-projects)，欢迎大家 star。我的个人网站：[ytp'room](https://www.ytproom.com/)，欢迎大家空闲时候来串串门呀。
+最后，这个系列项目的 github 地址：[native-web-projects](https://github.com/ytppp/native-web-projects)，欢迎大家 star。我的个人网站：[yangtp.com](https://www.yangtp.com/)，欢迎大家空闲时候来串串门呀。
 
 > 本文章属于个人原创，转载请标明出处。
