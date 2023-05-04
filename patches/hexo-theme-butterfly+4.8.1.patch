@@ -11,6 +11,18 @@ index dde47c5..3d5adf3 100644
            !=partial('includes/footer', {}, {cache: true})
  
      else
+diff --git a/node_modules/hexo-theme-butterfly/source/css/_global/index.styl b/node_modules/hexo-theme-butterfly/source/css/_global/index.styl
+index a73ae2c..c803390 100644
+--- a/node_modules/hexo-theme-butterfly/source/css/_global/index.styl
++++ b/node_modules/hexo-theme-butterfly/source/css/_global/index.styl
+@@ -2,6 +2,7 @@
+   --global-font-size: $font-size
+   --global-bg: $body-bg
+   --font-color: $font-black
++  --font-hover-color: $theme-color
+   --hr-border: lighten($theme-hr-color, 50%)
+   --hr-before-color: lighten($theme-hr-color, 30%)
+   --search-bg: $search-bg
 diff --git a/node_modules/hexo-theme-butterfly/source/css/_mode/darkmode.styl b/node_modules/hexo-theme-butterfly/source/css/_mode/darkmode.styl
 index 680ad3f..dc5cd7a 100644
 --- a/node_modules/hexo-theme-butterfly/source/css/_mode/darkmode.styl
