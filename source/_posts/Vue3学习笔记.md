@@ -1,6 +1,5 @@
 ---
 title: Vue3 学习笔记
-cover: https://cdn.jsdelivr.net/gh/youngjuning/images/20210517191449.png
 swiper_index: 3
 description: Vue3 中一些相较于 Vue2 变化与新语法的学习笔记。会一直更新。
 date: 2021-01-04 00:00:00
