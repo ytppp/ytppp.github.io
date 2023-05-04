@@ -358,7 +358,7 @@ algolia_search:
 
 # Local search
 local_search:
-  enable: false
+  enable: true
   # Preload the search data when the page loads.
   preload: false
   # Show top n results per article, show all results by setting to -1
@@ -432,12 +432,17 @@ livere:
 # gitalk
 # https://github.com/gitalk/gitalk
 gitalk:
-  client_id:
-  client_secret:
-  repo:
-  owner:
-  admin:
+  client_id: e3fc9b595b060b7b9991
+  client_secret: aee97cdee78bbdcb589fadb6aec8684a7ea33a45
+  repo: ytpblog-github-comment # GitHub 仓库
+  owner: ytppp # GitHub 仓库所有者
+  admin: [ytppp] # 对仓库有写权限的人
   option:
+    language: zh-CN # en, zh-CN, zh-TW, es-ES, fr, ru
+    perPage: 10 # Pagination size, with maximum 100.
+    distractionFreeMode: false # Facebook-like distraction free mode.
+    pagerDirection: last # Comment sorting direction, available values are last and first.
+    createIssueManually: false # Gitalk will create a corresponding github issue for your every single page automatically
 
 # valine
 # https://valine.js.org
@@ -758,7 +763,7 @@ subtitle:
 
 # Loading Animation (加載動畫)
 preloader:
-  enable: false
+  enable: true
   # source
   # 1. fullpage-loading
   # 2. pace (progress bar)
@@ -852,7 +857,7 @@ instantpage: false
 # https://github.com/vinta/pangu.js
 # Insert a space between Chinese character and English character (中英文之間添加空格)
 pangu:
-  enable: false
+  enable: true
   field: site # site/post
 
 # Lazyload (圖片懶加載)
