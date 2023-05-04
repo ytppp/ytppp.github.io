@@ -434,7 +434,7 @@ livere:
 gitalk:
   client_id: e3fc9b595b060b7b9991
   client_secret: aee97cdee78bbdcb589fadb6aec8684a7ea33a45
-  repo: ytpblog-github-comment # GitHub 仓库
+  repo: ytpblog-source-store # GitHub 仓库
   owner: ytppp # GitHub 仓库所有者
   admin: [ytppp] # 对仓库有写权限的人
   option:
