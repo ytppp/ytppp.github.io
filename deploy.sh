@@ -15,8 +15,8 @@ tcb hosting deploy public -e blog-0gleoc95ae6da80d
 # 删除部署文件
 rm -rf public
 
-# 提交修改代码
-msg="deploy"
+# 提交修改
+msg="feat: deploy"
 git add .
 git commit -m "${msg}"
 git push origin main
