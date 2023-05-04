@@ -7,10 +7,10 @@ set -e
 npm run build
 
 # 登录腾讯云
-cloudbase login
+tcb login
 
 # 上传腾讯云静态网站托管
-cloudbase hosting deploy public -e blog-0gleoc95ae6da80d
+tcb hosting deploy public -e blog-0gleoc95ae6da80d
 
 # 删除部署文件
 rm -rf public
