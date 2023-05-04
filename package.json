@@ -7,8 +7,9 @@
     "patch": "npx patch-package hexo-theme-butterfly && npx patch-package hexo-butterfly-footer-marcus",
     "build": "hexo generate",
     "clean": "hexo clean",
-    "deploy": "hexo deploy",
-    "server": "hexo clean && hexo generate && hexo server"
+    "server": "hexo clean && hexo generate && hexo server",
+    "deploy": "bash deploy.sh",
+    "updateTheme": "npm update hexo-theme-butterfly"
   },
   "hexo": {
     "version": "6.3.0"
