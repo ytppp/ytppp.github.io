@@ -2,7 +2,7 @@
 title: 原生JS实现表单验证
 description: 这是系列文章《原生 JS 实现前端常见功能》的第 1 篇，讲述如何通过原生 JS 实现表单验证。
 categories:
-  - [前端, 前端基础]
+  - [前端, 前端综合]
 tags:
   - JavaScript
   - HTML

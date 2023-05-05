@@ -3,7 +3,7 @@ title: 常用meta整理
 description: meta 标签提供关于 HTML 文档的元数据。元数据不会显示在页面上，但是对于机器是可读的。它可用于浏览器（如何显示内容或重新加载页面），搜索引擎（关键词），或其他 web 服务。
 date: 2020-02-21 12:20:10
 categories:
-  - [前端, 前端基础]
+  - [前端, HTML与CSS]
 tags:
   - HTML
 ---

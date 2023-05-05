@@ -3,7 +3,7 @@ title: BEM命名规范
 description: 介绍 BEM 命名规范。
 date: 2021-01-07 00:00:00
 categories:
-  - [前端, 前端基础]
+  - [前端, HTML与CSS]
 tags:
   - CSS
 ---

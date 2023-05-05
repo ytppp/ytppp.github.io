@@ -3,7 +3,7 @@ title: HTML 与 CSS 基础知识
 description: HTML 与 CSS 一些基础知识的整理。
 date: 2021-01-07 12:20:10
 categories:
-  - [前端, 前端基础]
+  - [前端, HTML与CSS]
 tags:
   - HTML
   - CSS

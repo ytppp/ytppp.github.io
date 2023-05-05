@@ -4,7 +4,7 @@ description: 很多人喜欢选择 APP 或网站中的深色模式，也许他�
 cover: https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200427163531.jpg
 date: 2020-03-31 14:06:26
 categories:
-  - [前端, 前端基础]
+  - [前端, 前端综合]
 tags:
   - CSS
 ---
