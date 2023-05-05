@@ -413,12 +413,12 @@ addtoany:
 comments:
   # Up to two comments system, the first will be shown as default
   # Choose: Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo/Giscus/Remark42/Artalk
-  use: # Valine,Disqus
+  use: Giscus # Valine,Disqus
   text: true # Display the comment name next to the button
   # lazyload: The comment system will be load when comment element enters the browser's viewport.
   # If you set it to true, the comment count will be invalid
-  lazyload: false
-  count: false # Display comment count in post's top_img
+  lazyload: true
+  count: true # Display comment count in post's top_img
   card_post_count: false # Display comment count in Home Page
 
 # disqus
@@ -504,13 +504,16 @@ twikoo:
 # Giscus
 # https://giscus.app/
 giscus:
-  repo:
-  repo_id:
-  category_id:
+  repo: ytppp/ytpblog-source-store
+  repo_id: MDEwOlJlcG9zaXRvcnkzMjcxNzI1NDA=
+  category_id: DIC_kwDOE4BBvM4CWRYH
   theme:
     light: light
     dark: dark
   option:
+    data-mapping: og:title
+    data-lang: zh-CN
+    data-input-position: top
 
 # Remark42
 # https://remark42.com/docs/configuration/frontend/
