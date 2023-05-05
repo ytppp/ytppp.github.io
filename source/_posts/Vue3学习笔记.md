@@ -4,9 +4,9 @@ swiper_index: 3
 description: Vue3 中一些相较于 Vue2 变化与新语法的学习笔记。会一直更新。
 date: 2021-01-04 00:00:00
 categories:
-  - 前端
+  - [前端, 前端框架学习]
 tags:
-  - Vue3
+  - Vue
   - TypeScript
 ---
 

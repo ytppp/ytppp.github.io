@@ -5,7 +5,7 @@ swiper_index: 2
 description: 这是系列文章《原生 JS 实现前端常见功能》的第 2 篇，讲述一些 svg 的基础知识和如何通过 svg 实现一个写字动画。
 date: 2021-07-09 14:24:36
 categories: 
-  - 前端
+  - [前端, 前端综合]
 tags: 
   - SVG
 ---
