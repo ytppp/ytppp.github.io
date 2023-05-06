@@ -166,6 +166,11 @@ nofollow:
 #     enable: true
 #     ## 详细配置: https://github.com/Lete114/fontmin-spider#api
 #     options: {}
+# hexo-auto-category
+# see https://github.com/xu-song/hexo-auto-category
+auto_category:
+ enable: true
+ depth: 
 # hexo-butterfly-swiper
 # see https://akilar.top/posts/8e1264d1/
 swiper:
