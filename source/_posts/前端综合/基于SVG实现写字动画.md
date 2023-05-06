@@ -1,13 +1,11 @@
 ---
 title: 基于SVG实现写字动画
-cover: https://cdn.pixabay.com/photo/2023/01/30/19/40/gulls-7756481_1280.jpg
-swiper_index: 2
 description: 这是系列文章《原生 JS 实现前端常见功能》的第 2 篇，讲述一些 svg 的基础知识和如何通过 svg 实现一个写字动画。
-date: 2021-07-09 14:24:36
-categories: 
-  - [前端, 前端综合]
-tags: 
+tags:
   - SVG
+categories:
+  - 前端综合
+date: 2021-07-09 14:24:36
 ---
 
 `SVG`是一种基于`XML`的标记语言，常用来优雅、简洁地渲染一些可以自动实现`响应式变化`的图形，并和`CSS`，`DOM`，`JavaScript`等其他网络标准无缝衔接。所以在工作中，熟练地使用它能使开发过程更得心应手。
@@ -368,6 +366,6 @@ strokeLetter(paths[0], strokes[0]);
 5. [svg 动画以描边以及文字书写 使用](https://blog.csdn.net/chao2458/article/details/84983203)
 6. [SVG 之 ViewBox](https://segmentfault.com/a/1190000009226427?utm_source=tag-newest)
 
-最后，这个系列项目的 github 地址：[native-web-projects](https://github.com/ytppp/native-web-projects)，欢迎大家 star。我的个人网站：[yangtp.com](https://www.yangtp.com/)，欢迎大家空闲时候来串串门呀。
+最后，这个系列项目的 github 地址：[native-web-projects](https://github.com/ytppp/native-web-projects)，欢迎大家 star。我的个人网站：[ytp'room](https://www.ytproom.com/)，欢迎大家空闲时候来串串门呀。
 
 > 本文章属于个人原创，转载请标明出处。

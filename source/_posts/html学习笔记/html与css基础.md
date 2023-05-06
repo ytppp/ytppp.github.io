@@ -1,12 +1,11 @@
 ---
-title: HTML 与 CSS 基础知识
-description: HTML 与 CSS 一些基础知识的整理。
-date: 2021-01-07 12:20:10
-categories:
-  - [前端, HTML与CSS]
+title: HTML基础知识
+description: HTML 一些基础知识的整理。
 tags:
-  - HTML
-  - CSS
+  - null
+categories:
+  - html学习笔记
+date: 2021-01-07 12:20:10
 ---
 
 ## 文章目录
@@ -14,6 +13,8 @@ tags:
 - CSS 选择器的权重与优先级
 - 盒子模型
 - 浮动 Float
+
+---
 
 ## CSS 选择器的权重与优先级
 

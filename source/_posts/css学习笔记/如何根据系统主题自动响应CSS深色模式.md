@@ -1,12 +1,14 @@
 ---
 title: 如何根据系统主题自动响应CSS深色模式
-description: 很多人喜欢选择 APP 或网站中的深色模式，也许他们更喜欢这样的外观，或者他们想让自己的眼睛免受疲劳。这篇文章将告诉你如何在网站中实现一个自动的 CSS 深色模式，根据访客的系统主题来自动响应。
-cover: https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200427163531.jpg
-date: 2020-03-31 14:06:26
+cover: 'https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200427163531.jpg'
+description: >-
+  很多人喜欢选择 APP 或网站中的深色模式，也许他们更喜欢这样的外观，或者他们想让自己的眼睛免受疲劳。这篇文章将告诉你如何在网站中实现一个自动的 CSS
+  深色模式，根据访客的系统主题来自动响应。
 categories:
-  - [前端, 前端综合]
+  - css学习笔记
 tags:
-  - CSS
+  - css
+date: 2020-03-31 14:06:26
 ---
 
 ## CSS 深色模式 (Dark Mode)

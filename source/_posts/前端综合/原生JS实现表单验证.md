@@ -1,18 +1,16 @@
 ---
 title: 原生JS实现表单验证
 description: 这是系列文章《原生 JS 实现前端常见功能》的第 1 篇，讲述如何通过原生 JS 实现表单验证。
-categories:
-  - [前端, 前端综合]
 tags:
   - JavaScript
-  - HTML
-  - CSS
+categories:
+  - 前端综合
 date: 2021-06-15 16:07:40
 ---
 
 表单验证是 web 开发中的常见功能之一。为了更快地摸鱼，大佬们往往会用`vue`等框架提供的**双向数据绑定**功能结合`async-validator`等验证库来实现。但作为菜鸟的我，现状是：框架越用越熟练，对原生 JS 实现表单验证的方式却越来越模糊。所以今天索性通过**表单注册**这个小 demo 的开发，回味一下原汁原味的表单验证开发。
 
-## 功能描述
+### 功能描述
 
 当点击登录按钮时，验证：
 
@@ -21,7 +19,7 @@ date: 2021-06-15 16:07:40
 3. 邮箱格式是否正确
 4. 两次输入的密码是否一致
 
-## html 和 css
+### html 和 css
 
 1. html：
 
@@ -151,9 +149,9 @@ h2 {
 
 html 和 css 都很简单，就不赘述了。重点说下如何用 JS 实现表单验证。
 
-## 用 JS 实现表单验证与提交
+### 用 JS 实现表单验证与提交
 
-### 获取 dom 节点。
+#### 获取 dom 节点。
 
 ```javascript
 const form = document.getElementById('form');
@@ -163,7 +161,7 @@ const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
 ```
 
-### 封装验证提示的公共方法
+#### 封装验证提示的公共方法
 
 因为验证提示对于每一个要验证的表单项都会用到，所以这里封装成公用方法。
 
@@ -187,7 +185,7 @@ function showSuccess(input) {
 
 先获取当前表单项的父级节点，在其样式上加入验证是否通过的类样式（这里，通过加上`success`,不通过加上`error`），然后再找到与当前表单项同级的`<small>`标签，用来显示验证是否通过的提示信息。
 
-### 获取表单项的名字
+#### 获取表单项的名字
 
 主要在验证是否通过的提示文本使用，也是一个公用方法，所以先封装一下。
 
@@ -200,7 +198,7 @@ function getFieldName(input) {
 }
 ```
 
-### 其他验证
+#### 其他验证
 
 接下来依次实现：邮箱格式验证、必填验证、长度验证、密码是否一致的验证。
 
@@ -263,7 +261,7 @@ function checkPasswordsMatch(input1, input2) {
 }
 ```
 
-### 提交
+#### 提交
 
 ```javascript
 form.addEventListener('submit', function(e) {
@@ -278,7 +276,7 @@ form.addEventListener('submit', function(e) {
 });
 ```
 
-## JS 部分整体代码
+### JS 部分整体代码
 
 ```javascript
 const form = document.getElementById('form');

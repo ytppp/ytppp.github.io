@@ -1,12 +1,13 @@
 ---
 title: BEM命名规范
-description: 介绍 BEM 命名规范。
-date: 2021-01-07 00:00:00
-categories:
-  - [前端, HTML与CSS]
+description: 一些 BEM 命名规范的介绍
 tags:
-  - CSS
+  - null
+categories:
+  - css学习笔记
+date: 2021-01-07 00:00:00
 ---
+
 
 ## 什么是 BEM 命名规范？
 
