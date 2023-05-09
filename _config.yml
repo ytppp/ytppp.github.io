@@ -182,7 +182,7 @@ swiper:
     type: id
     name: recent-posts
     index: 0
-  default_descr: 再怎么看我也不知道怎么描述它的啦！
+  default_descr: 不可知其源
   swiper_css: https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css #swiper css依赖
   swiper_js: https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js #swiper js依赖
   custom_css: https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css # 适配主题样式补丁
@@ -201,7 +201,7 @@ footer_beautify:
     enable: false
     left:
       - icon: fa-solid fa-envelope
-        link: mailto:luozhu2021@gmail.com
+        link: mailto:651003708@qq.com
         desrc: 发送邮件
         class: out
     right:
@@ -215,10 +215,16 @@ footer_beautify:
   footer_group:
     enable: true
     footer_group_link:
-      - group_title: 时间轴
+      - group_title: 文章
         footer_links:
           - text: 归档
             link: /archives/
+            class: in
+          - text: 标签
+            link: /tags/
+            class: in
+          - text: 分类
+            link: /categories/
             class: in
   footer_friend_links:
     enable: false
