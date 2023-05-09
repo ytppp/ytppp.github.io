@@ -16,7 +16,7 @@ tcb hosting deploy public -e blog-0gleoc95ae6da80d
 rm -rf public
 
 # 提交修改
-msg="feat: deploy"
+msg="chore: deploy site"
 git add .
 git commit -m "${msg}"
 git push origin main
