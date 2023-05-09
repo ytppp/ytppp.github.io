@@ -8,6 +8,10 @@ tags:
 categories:
   - html学习笔记
 date: 2020-02-21 12:20:10
+copyright_author: xugaoyi
+copyright_url: https://xugaoyi.com/pages/8309a5b876fc95e3
+copyright_author_href: https://www.xugaoyi.com/
+copyright_info: 此文章版权归原作者所有，如有转载，请注明来自原作者
 ---
 
 ## <meta\> 元素
@@ -247,5 +251,3 @@ url="url" 后者代表当前PC页所对应的手机页URL，两者必须是一�
   content="width=device-width,initial-scale=1.0,minimun-scale=1.0,maximum-scale=1.0,user-scalable=no"
 />
 ```
-
-> 本文转自<https://xugaoyi.com/pages/8309a5b876fc95e3>，作者：xugaoyi

@@ -9,6 +9,10 @@ categories:
 tags:
   - css
 date: 2020-03-31 14:06:26
+copyright_author: xugaoyi
+copyright_url: https://xugaoyi.com/pages/5dde351274f1e39d/
+copyright_author_href: https://xugaoyi.com/
+copyright_info: 此文章版权归原作者所有，如有转载，请注明来自原作者
 ---
 
 ## CSS 深色模式 (Dark Mode)
@@ -106,4 +110,4 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(listeners.light);
 
 我们不仅可以在布局方面响应不同尺寸屏幕，还可以按系统主题响应深色模式。我相信你的深夜访客，或者那些喜欢深色模式的人，会感谢你的。
 
-> 本文转自<https://xugaoyi.com/pages/5dde351274f1e39d/#css-%E6%B7%B1%E8%89%B2%E6%A8%A1%E5%BC%8F-dark-mode>，作者：xugaoyi
+

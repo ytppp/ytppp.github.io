@@ -6,6 +6,10 @@ tags:
 categories:
   - 前端综合
 date: 2020-04-08 17:16:38
+copyright_author: 邹成卓 (zoucz)
+copyright_url: https://zoucz.com/blog/2016/02/17/npm-package/
+copyright_author_href: https://www.zoucz.com/
+copyright_info: 此文章版权归原作者所有，如有转载，请注明来自原作者
 ---
 
 ## 概述
@@ -497,5 +501,3 @@ npm 设置了一些默认参数，如：
 如果模块根目录下有 binding.gyp, npm 将默认用 node-gyp 来编译 preinstall 的脚本
 "contributors": [...]
 若模块根目录下有 AUTHORS 文件，则 npm 会按 Name (url)格式解析每一行的数据添加到 contributors 中，可以用#添加行注释
-
-> 本文转自<https://www.cnblogs.com/tzyy/p/5193811.html>，作者：TZYY

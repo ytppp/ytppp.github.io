@@ -6,6 +6,10 @@ tags:
 categories:
   - 心情杂货
 date: 2021-09-10 09:53:14
+copyright_author: 阮一峰
+copyright_url: https://www.ruanyifeng.com/blog/2021/09/weekly-issue-175.html
+copyright_author_href: https://www.ruanyifeng.com/
+copyright_info: 此文章版权归原作者所有，如有转载，请注明来自原作者
 ---
 
 [上一期](https://www.ruanyifeng.com/blog/2021/09/weekly-issue-174.html)谈到，"特长程序员"比"全能程序员"吃香。
@@ -42,4 +46,4 @@ date: 2021-09-10 09:53:14
 
 总结一下，对于公司来说，如果有明确的技术方向，那么就需要聘请特长程序员，帮助加快开发速度。如果是刚刚诞生的创业公司，方向还在摸索之中，那么全能程序员也许更有价值。
 
-> 本文转自<https://www.ruanyifeng.com/blog/2021/09/weekly-issue-175.html>，作者：阮一峰
+

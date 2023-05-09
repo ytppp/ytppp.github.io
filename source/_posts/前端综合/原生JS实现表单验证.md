@@ -364,6 +364,5 @@ form.addEventListener('submit', function(e) {
 
 以上就是原生 JS 实现表单验证的全部功能，感兴趣的大佬可以在这个小小 demo 上再进行扩展，相信一定会有更多的收获哦。
 
-最后，这个系列项目的 github 地址：[native-web-projects](https://github.com/ytppp/native-web-projects)，欢迎大家 star。我的个人网站：[ytp'room](https://www.ytproom.com/)，欢迎大家空闲时候来串串门呀。
+> 最后，这个系列项目的 github 地址：[native-web-projects](https://github.com/ytppp/native-web-projects)，欢迎大家 star。我的个人网站：[yangtp.com](https://www.yangtp.com/)，欢迎大家空闲时候来串串门呀。
 
-> 本文章属于个人原创，转载请标明出处。
