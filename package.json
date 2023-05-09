@@ -8,8 +8,7 @@
     "build": "hexo generate",
     "clean": "hexo clean",
     "server": "hexo clean && hexo generate && hexo server",
-    "deploy": "bash deploy.sh",
-    "updateTheme": "npm update hexo-theme-butterfly"
+    "deploy": "bash deploy.sh"
   },
   "hexo": {
     "version": "6.3.0"
