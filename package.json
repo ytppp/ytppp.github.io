@@ -3,11 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "postinstall": "npx patch-package",
-    "patch": "npx patch-package hexo-theme-butterfly && npx patch-package hexo-butterfly-footer-marcus",
     "build": "hexo generate",
     "clean": "hexo clean",
-    "server": "hexo clean && hexo generate && hexo server",
+    "dev": "hexo clean && hexo generate && hexo server",
+    "updateTheme": "npm uninstall hexo-theme-butterfly && npm i hexo-theme-butterfly",
     "deploy": "bash deploy.sh"
   },
   "hexo": {
@@ -16,7 +15,6 @@
   "dependencies": {
     "hexo": "^6.3.0",
     "hexo-auto-category": "^0.2.1",
-    "hexo-butterfly-footer-marcus": "^1.1.3",
     "hexo-butterfly-swiper": "^1.0.12",
     "hexo-filter-nofollow": "^2.0.2",
     "hexo-generator-archive": "^2.0.0",
@@ -31,6 +29,6 @@
     "hexo-renderer-pug": "^3.0.0",
     "hexo-renderer-stylus": "^2.1.0",
     "hexo-server": "^3.0.0",
-    "hexo-theme-butterfly": "^4.8.1"
+    "hexo-theme-butterfly": "^4.8.5"
   }
 }
