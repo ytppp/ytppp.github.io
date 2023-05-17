@@ -235,7 +235,7 @@ aside:
     category: true
   card_author:
     enable: true
-    description: 兴，百姓苦；亡，百姓苦。
+    description: 芝兰生于深谷，不以无人而不芳。君子修身养德，不以穷困而改志。
     button:
       enable: true
       icon: fab fa-github
