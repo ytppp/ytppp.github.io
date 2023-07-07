@@ -106,7 +106,7 @@ $ docker compose run web bash
 
 后面需要在容器内执行的操作都会通过这个 shell 执行。
 
-# 执行 bundle
+### 执行 bundle
 
 首先在容器内执行以下命令：
 
