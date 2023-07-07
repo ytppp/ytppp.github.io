@@ -6,7 +6,7 @@ categories:
   - ruby学习杂记
 ---
 
-## 方法一
+## 思路
 
 先开启一个临时的 Ruby 容器，在容器内创建项目，之后再构建开发需要的镜像。
 
@@ -154,3 +154,30 @@ $ docker compose up
 
 启动完成后，打开 http://localhost:3000 就能看到 Rails 的启动页面了
 
+
+## 一种更简单的方式
+
+偶然看大佬的分享发现的：[rails/docked](https://github.com/rails/docked)
+
+先运行下面的命令：
+
+```
+$ docker volume create ruby-bundle-cache
+$ alias docked='docker run --rm -it -v ${PWD}:/rails -v ruby-bundle-cache:/bundle -p 3000:3000 ghcr.io/rails/cli'
+```
+
+然后创造你的 rails 应用:
+
+```
+$ docked rails new weblog
+$ cd weblog
+$ docked rails generate scaffold post title:string body:text
+$ docked rails db:migrate
+$ docked rails server
+```
+
+参考资料:
+
+1. [Rails on Docker: 用 Docker Compose 搭建开发环境](https://geeknote.net/Rei/posts/372)
+2. [用 Docked Rails CLI 启动新手环境](https://www.bilibili.com/video/BV1QA411m7E4)
+3. [用 Docker 构建开发环境](https://ruby-china.org/topics/37628)
