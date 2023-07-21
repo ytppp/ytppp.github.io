@@ -27,7 +27,7 @@ $ docker run -it -v $(pwd):/app -w /app ruby:3.2 bash
 然后创建项目：
 
 ```
-/app# rails new myapp --database postgresql --skip-bundle
+/app# rails new myapp --database=postgresql --css=sass --skip-bundle
 ```
 
 这里使用了`--skip-bundle`参数，因为这只是个临时容器，稍后会在开发容器内执行 `bundle`。
