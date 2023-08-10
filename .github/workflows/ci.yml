@@ -17,8 +17,11 @@ jobs:
           node-version: '16.x'
       - name: Install Dependencies and Build
         run: |
-          npm run install
+          npm install
           npm run build
+          npm install -g hexo-cli
+          hexo clean
+          hexo generate
       - name: Delete gh-pages branch
         run: git push origin --delete gh-pages
       - name: Deploy
