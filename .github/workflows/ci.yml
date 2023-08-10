@@ -22,8 +22,8 @@ jobs:
           npm install -g hexo-cli
           hexo clean
           hexo generate
-      - name: Delete gh-pages branch
-        run: git push origin --delete gh-pages
+      # - name: Delete gh-pages branch
+      #   run: git push origin --delete gh-pages
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
