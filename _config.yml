@@ -193,7 +193,4 @@ theme: butterfly
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: 'git'
-  repo: 'git@github.com:ytppp/ytppp.github.io.git'
-  branch: 'deploy'
-  message: 'chore: deploy site'
+  type: ''

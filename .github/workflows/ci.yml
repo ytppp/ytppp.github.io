@@ -25,7 +25,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }} # 版本
       - name: Build-and-deploy # 步骤3
-        run: |
-          npm install -g hexo-cli
-          hexo clean
-          hexo deploy
+          uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.ytpblog-static-workflow-token }}
+          publish_branch: deploy
+          publish_dir: ./public
+          cname: yangtp.com
