@@ -176,6 +176,10 @@ $ docked rails db:migrate
 $ docked rails server
 ```
 
+## 自己的快速启动模板
+
+（待添加）
+
 参考资料:
 
 1. [Rails on Docker: 用 Docker Compose 搭建开发环境](https://geeknote.net/Rei/posts/372)
