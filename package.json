@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "hexo generate",
+    "build": "hexo clean & hexo generate",
     "clean": "hexo clean",
     "dev": "hexo clean && hexo generate && hexo server",
     "updateTheme": "npm uninstall hexo-theme-butterfly && npm i hexo-theme-butterfly",
