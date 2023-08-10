@@ -154,6 +154,19 @@ $ docker compose up
 
 启动完成后，打开 http://localhost:3000 就能看到 Rails 的启动页面了
 
+## 自己的快速搭建模板
+
+[docker-rails-project-temp](https://github.com/ytppp/docker-rails-project-temp)
+
+目前支持的功能：
+
+- Docker
+- dotenv
+- PosgreSQL
+- Redis
+- Github Actions
+- Brakeman
+- All other Rails default stack
 
 ## 一种更简单的方式
 
@@ -175,10 +188,6 @@ $ docked rails generate scaffold post title:string body:text
 $ docked rails db:migrate
 $ docked rails server
 ```
-
-## 自己的快速启动模板
-
-（待添加）
 
 参考资料:
 
