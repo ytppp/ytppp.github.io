@@ -27,7 +27,7 @@ jobs:
           hexo clean
           hexo generate
       - name: Delete gh-pages branch
-          run: git push origin --delete gh-pages
+        run: git push origin --delete gh-pages
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
