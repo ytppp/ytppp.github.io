@@ -1,0 +1,420 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>npm packageJson属性详解 | 杨庭培的博客</title><meta name="author" content="杨庭培"><meta name="copyright" content="杨庭培"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="简单介绍 package.json">
+<meta property="og:type" content="article">
+<meta property="og:title" content="npm packageJson属性详解">
+<meta property="og:url" content="https://blog-0gleoc95ae6da80d-1255445432.tcloudbaseapp.com/9a1c987b5f41/index.html">
+<meta property="og:site_name" content="杨庭培的博客">
+<meta property="og:description" content="简单介绍 package.json">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.pixabay.com/photo/2023/02/04/07/38/cherry-blossoms-7766588_1280.jpg">
+<meta property="article:published_time" content="2020-04-08T09:16:38.000Z">
+<meta property="article:modified_time" content="2023-08-10T05:54:13.386Z">
+<meta property="article:author" content="杨庭培">
+<meta property="article:tag" content="npm">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.pixabay.com/photo/2023/02/04/07/38/cherry-blossoms-7766588_1280.jpg"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/ytppp/ytpblog-static-source-store/source/favicon.ico"><link rel="canonical" href="https://blog-0gleoc95ae6da80d-1255445432.tcloudbaseapp.com/9a1c987b5f41/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'npm packageJson属性详解',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-08-10 13:54:13'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="杨庭培的博客" type="application/atom+xml">
+<link rel="alternate" href="/rss2.xml" title="杨庭培的博客" type="application/rss+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://cdn.jsdelivr.net/gh/ytppp/ytpblog-static-source-store/img/logo.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">45</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-lines-leaning"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-book"></i><span> 教程</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/MySql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><i class="fa-fw fas fa-database"></i><span> MySql学习笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-address-card"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.pixabay.com/photo/2023/02/04/07/38/cherry-blossoms-7766588_1280.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="杨庭培的博客"><img class="site-icon" src="https://cdn.jsdelivr.net/gh/ytppp/ytpblog-static-source-store/img/logo.png"/><span class="site-name">杨庭培的博客</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-lines-leaning"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-book"></i><span> 教程</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/MySql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><i class="fa-fw fas fa-database"></i><span> MySql学习笔记</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-address-card"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">npm packageJson属性详解</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-04-08T09:16:38.000Z" title="发表于 2020-04-08 17:16:38">2020-04-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-08-10T05:54:13.386Z" title="更新于 2023-08-10 13:54:13">2023-08-10</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%BB%BC%E5%90%88/">前端综合</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="npm packageJson属性详解"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><code>package.json</code>必须是一个严格的 json 文件，而不仅仅是 js 里边的一个对象。其中很多属性可以通过<code>npm-config</code>来生成</p>
+<h2 id="name"><a href="#name" class="headerlink" title="name"></a>name</h2><p><code>package.json</code>中最重要的属性是<code>name</code>和<code>version</code>两个属性，这两个属性是必须要有的，否则模块就无法被安装，这两个属性一起形成了一个 npm 模块的唯一标识符。模块中内容变更的同时，模块版本也应该一起变化。<br><code>name</code>属性就是你的模块名称，下面是一些命名规则:</p>
+<ul>
+<li><p><code>name</code>必须小于等于 214 个字节，包括前缀名称在内（如 xxx&#x2F;xxxmodule）。</p>
+</li>
+<li><p><code>name</code>不能以”_“或”.”开头</p>
+</li>
+<li><p>不能含有大写字母</p>
+</li>
+<li><p><code>name</code>会成为 url 的一部分，不能含有 url 非法字符</p>
+<p>下面是官网文档的一些建议：</p>
+</li>
+<li><p>不要使用和 node 核心模块一样的名称</p>
+</li>
+<li><p><code>name</code>中不要含有”js”和”node”。 It’s assumed that it’s js, since you’re writing a package.json file, and you can specify the engine using the “engines” field. (See below.)</p>
+</li>
+<li><p><code>name</code>属性会成为模块 url、命令行中的一个参数或者一个文件夹名称，任何非 url 安全的字符在 name 中都不能使用，也不能以”_“或”.”开头</p>
+</li>
+<li><p><code>name</code>属性也许会被写在<code>require()</code>的参数中，所以最好取个简短而语义化的值。</p>
+</li>
+<li><p>创建一个模块前可以先到后边的网址查查<code>name</code>是否已经被占用. <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.npmjs.com/">https://www.npmjs.com/</a></p>
+<ul>
+<li><pre><code class="sh"># 发布一个包的时候，需要检验某个包名是否存在
+npm search &lt;ModuleName&gt;
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">`name`属性可以有一些前缀如 e.g. @myorg/mypackage.在 npm-scope(7)的文档中可以看到详细说明</span><br><span class="line"></span><br><span class="line">## version</span><br><span class="line"></span><br><span class="line">`version`必须可以被 npm 依赖的一个`node-semver`模块解析。具体规则见下面的`dependencies`模块</span><br><span class="line"></span><br><span class="line">## description</span><br><span class="line"></span><br><span class="line">一个描述，方便别人了解你的模块作用，搜索的时候也有用。</span><br><span class="line"></span><br><span class="line">## keywords</span><br><span class="line"></span><br><span class="line">一个字符串数组，方便别人搜索到本模块</span><br><span class="line"></span><br><span class="line">## homepage</span><br><span class="line"></span><br><span class="line">项目主页 url</span><br><span class="line">**注意:** 这个项目主页 url 和 url 属性不同，如果你填写了 url 属性，npm 注册工具会认为你把项目发布到其他地方了，获取模块的时候不会从 npm 官方仓库获取，而是会重定向到 url 属性配置的地址。</span><br><span class="line">（原文档中用了 spit(吐)这个单词，作者表示他不是在开玩笑:）</span><br><span class="line"></span><br><span class="line">## bugs</span><br><span class="line"></span><br><span class="line">填写一个 bug 提交地址或者一个邮箱，被你的模块坑到的人可以通过这里吐槽，例如：</span><br><span class="line"></span><br><span class="line">```json</span><br><span class="line">&#123;</span><br><span class="line">  &quot;url&quot;: &quot;https://github.com/owner/project/issues&quot;,</span><br><span class="line">  &quot;email&quot;: &quot;project@hostname.com&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<p>url 和 email 可以任意填或不填，如果只填一个，可以直接写成一个字符串而不是对象。如果填写了 url，npm bugs 命令会使用这个 url。</p>
+<h2 id="license"><a href="#license" class="headerlink" title="license"></a>license</h2><p>你应该为你的模块制定一个协议，让用户知道他们有何权限来使用你的模块，以及使用该模块有哪些限制。最简单的，例如你用 BSD-3-Clause 或 MIT 之类的协议，如下：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span> <span class="attr">&quot;license&quot;</span><span class="punctuation">:</span> <span class="string">&quot;MIT&quot;</span> <span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>你可以在<a target="_blank" rel="noopener external nofollow noreferrer" href="https://spdx.org/licenses/">https://spdx.org/licenses/ </a>这个地址查阅协议列表 。</p>
+<h2 id="和用户相关的属性-author-contributors"><a href="#和用户相关的属性-author-contributors" class="headerlink" title="和用户相关的属性: author, contributors"></a>和用户相关的属性: author, contributors</h2><p><code>author</code>是一个码农， <code>contributors</code>是一个码农数组。 <code>person</code>是一个有一些描述属性的对象，如下 like this:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Barney Rubble&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;email&quot;</span><span class="punctuation">:</span> <span class="string">&quot;b@rubble.com&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;http://barnyrubble.tumblr.com/&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>也可以按如下格式缩写，npm 会帮着转换:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;Barney Rubble b@rubble.com (http://barnyrubble.tumblr.com/)&quot;</span><br></pre></td></tr></table></figure>
+
+<p><code>email</code>和<code>url</code>属性实际上都是可以省略的。描述用户信息的还有一个<code>maintainers</code>（维护者）属性。</p>
+<h2 id="files"><a href="#files" class="headerlink" title="files"></a>files</h2><p><code>files</code>属性的值是一个数组，内容是模块下文件名或者文件夹名，如果是文件夹名，则文件夹下所有的文件也会被包含进来（除非文件被另一些配置排除了）<br>你也可以在模块根目录下创建一个<code>.npmignore</code>文件（windows 下无法直接创建以”.”开头的文件，使用 linux 命令行工具创建如 git bash），写在这个文件里边的文件即便被写在 files 属性里边也会被排除在外，这个文件的写法”.gitignore”类似。</p>
+<h2 id="main"><a href="#main" class="headerlink" title="main"></a>main</h2><p><code>main</code>属性指定了程序的主入口文件。意思是，如果你的模块被命名为 foo，用户安装了这个模块并通过 require(“foo”)来使用这个模块，那么 require 返回的内容就是 main 属性指定的文件中 module.exports 指向的对象。<br>它应该指向模块根目录下的一个文件。对大对数模块而言，这个属性更多的是让模块有一个主入口文件，然而很多模块并不写这个属性。</p>
+<h2 id="bin"><a href="#bin" class="headerlink" title="bin"></a>bin</h2><p>很多模块有一个或多个需要配置到 PATH 路径下的可执行模块，npm 让这个工作变得十分简单（实际上 npm 本身也是通过 bin 属性安装为一个可执行命令的）<br>如果要用 npm 的这个功能，在 package.json 里边配置一个 bin 属性。bin 属性是一个已命令名称为 key，本地文件名称为 value 的 map 如下：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;bin&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span> <span class="attr">&quot;myapp&quot;</span><span class="punctuation">:</span> <span class="string">&quot;./cli.js&quot;</span> <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>模块安装的时候，若是全局安装，则 npm 会为 bin 中配置的文件在 bin 目录下创建一个软连接（对于 windows 系统，默认会在 C:\Users\username\AppData\Roaming\npm 目录下），若是局部安装，则会在项目内的.&#x2F;node_modules&#x2F;.bin&#x2F;目录下创建一个软链接。<br>因此，按上面的例子，当你安装 myapp 的时候，npm 就会为 cli.js 在&#x2F;usr&#x2F;local&#x2F;bin&#x2F;myapp 路径创建一个软链接。<br>如果你的模块只有一个可执行文件，并且它的命令名称和模块名称一样，你可以只写一个字符串来代替上面那种配置，例如：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;my-program&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1.2.5&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;bin&quot;</span><span class="punctuation">:</span> <span class="string">&quot;./path/to/program&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>作用和如下写法相同:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;my-program&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1.2.5&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;bin&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;my-program&quot;</span><span class="punctuation">:</span> <span class="string">&quot;./path/to/program&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="man"><a href="#man" class="headerlink" title="man"></a>man</h2><p>制定一个或通过数组制定一些文件来让 linux 下的 man 命令查找文档地址。<br>如果只有一个文件被指定的话，安装后直接使用 man+模块名称，而不管 man 指定的文件的实际名称。例如:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;foo&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1.2.3&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;description&quot;</span><span class="punctuation">:</span> <span class="string">&quot;A packaged foo fooer for fooing foos&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;main&quot;</span><span class="punctuation">:</span> <span class="string">&quot;foo.js&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;man&quot;</span><span class="punctuation">:</span> <span class="string">&quot;./man/doc.1&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>通过 man foo 命令会得到 .&#x2F;man&#x2F;doc.1 文件的内容。<br>如果 man 文件名称不是以模块名称开头的，安装的时候会给加上模块名称前缀。因此，下面这段配置：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;foo&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1.2.3&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;description&quot;</span><span class="punctuation">:</span> <span class="string">&quot;A packaged foo fooer for fooing foos&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;main&quot;</span><span class="punctuation">:</span> <span class="string">&quot;foo.js&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;man&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;./man/foo.1&quot;</span><span class="punctuation">,</span> <span class="string">&quot;./man/bar.1&quot;</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>会创建一些文件来作为 man foo 和 man foo-bar 命令的结果。<br>man 文件必须以数字结尾，或者如果被压缩了，以.gz 结尾。数字表示文件将被安装到 man 的哪个部分。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;foo&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1.2.3&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;description&quot;</span><span class="punctuation">:</span> <span class="string">&quot;A packaged foo fooer for fooing foos&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;main&quot;</span><span class="punctuation">:</span> <span class="string">&quot;foo.js&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;man&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;./man/foo.1&quot;</span><span class="punctuation">,</span> <span class="string">&quot;./man/foo.2&quot;</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>会创建 man foo 和 man 2 foo 两条命令。</p>
+<h2 id="directories"><a href="#directories" class="headerlink" title="directories"></a>directories</h2><p>CommonJs 通过 directories 来制定一些方法来描述模块的结构，看看 npm 的 package.json 文件<a target="_blank" rel="noopener external nofollow noreferrer" href="https://registry.npmjs.org/npm/latest">https://registry.npmjs.org/npm/latest</a> ，可以发现里边有这个字段的内容。<br><img src="http://zoucz.com/blogimgs/2016-02-16/1455624810992.png" alt="img"><br>目前这个配置没有任何作用，将来可能会整出一些花样来。</p>
+<h3 id="directories-lib"><a href="#directories-lib" class="headerlink" title="directories.lib"></a>directories.lib</h3><p>告诉用户模块中 lib 目录在哪，这个配置目前没有任何作用，但是对使用模块的人来说是一个很有用的信息。</p>
+<h3 id="directories-bin"><a href="#directories-bin" class="headerlink" title="directories.bin"></a>directories.bin</h3><p>如果你在这里指定了 bin 目录，这个配置下面的文件会被加入到 bin 路径下，如果你已经在 package.json 中配置了 bin 目录，那么这里的配置将不起任何作用。</p>
+<h3 id="directories-man"><a href="#directories-man" class="headerlink" title="directories.man"></a>directories.man</h3><p>指定一个目录，目录里边都是 man 文件，这是一种配置 man 文件的语法糖。</p>
+<h3 id="directories-doc"><a href="#directories-doc" class="headerlink" title="directories.doc"></a>directories.doc</h3><p>在这个目录里边放一些 markdown 文件，可能最终有一天它们会被友好的展现出来（应该是在 npm 的网站上）</p>
+<h3 id="directories-example"><a href="#directories-example" class="headerlink" title="directories.example"></a>directories.example</h3><p>放一些示例脚本，或许某一天会有用 - -！</p>
+<h2 id="repository"><a href="#repository" class="headerlink" title="repository"></a>repository</h2><p>指定一个代码存放地址，对想要为你的项目贡献代码的人有帮助。像这样：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;repository&quot;</span> <span class="punctuation">:</span></span><br><span class="line">  <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;type&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;git&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;url&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;https://github.com/npm/npm.git&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">&quot;repository&quot;</span> <span class="punctuation">:</span></span><br><span class="line">  <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;type&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;svn&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;url&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;https://v8.googlecode.com/svn/trunk/&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>若你的模块放在 GitHub, GitHub gist, Bitbucket, or GitLab 的仓库里，npm install 的时候可以使用缩写标记来完成：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;repository&quot;</span><span class="punctuation">:</span> <span class="string">&quot;npm/npm&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">&quot;repository&quot;</span><span class="punctuation">:</span> <span class="string">&quot;gist:11081aaa281&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">&quot;repository&quot;</span><span class="punctuation">:</span> <span class="string">&quot;bitbucket:example/repo&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">&quot;repository&quot;</span><span class="punctuation">:</span> <span class="string">&quot;gitlab:another/repo&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="scripts"><a href="#scripts" class="headerlink" title="scripts"></a>scripts</h2><p>scripts 属性是一个对象，里边指定了项目的生命周期个各个环节需要执行的命令。key 是生命周期中的事件，value 是要执行的命令。<br>具体的内容有 install start stop 等，详见<a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.npmjs.com/misc/scripts"> https://docs.npmjs.com/misc/scripts</a></p>
+<h2 id="config"><a href="#config" class="headerlink" title="config"></a>config</h2><p>用来设置一些项目不怎么变化的项目配置，例如 port 等。<br>用户用的时候可以使用如下用法：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http.createServer(...).listen(process.env.npm_package_config_port)</span><br></pre></td></tr></table></figure>
+
+<p>可以通过 npm config set foo:port 80 来修改 config。详见<a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.npmjs.com/misc/config">https://docs.npmjs.com/misc/config</a></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;foo&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;config&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span> <span class="attr">&quot;port&quot;</span><span class="punctuation">:</span> <span class="string">&quot;8080&quot;</span> <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="dependencies"><a href="#dependencies" class="headerlink" title="dependencies"></a>dependencies</h2><p>dependencies 属性是一个对象，配置模块依赖的模块列表，key 是模块名称，value 是版本范围，版本范围是一个字符，可以被一个或多个空格分割。<br>dependencies 也可以被指定为一个 git 地址或者一个压缩包地址。<br>不要把测试工具或 transpilers 写到 dependencies 中。 下面是一些写法，详见<a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.npmjs.com/misc/semver">https://docs.npmjs.com/misc/semver</a></p>
+<ul>
+<li>version 精确匹配版本</li>
+<li>&gt;version 必须大于某个版本</li>
+<li>&gt;&#x3D;version 大于等于</li>
+<li>&lt;version 小于</li>
+<li>&lt;&#x3D;versionversion 小于</li>
+<li>~version “约等于”，具体规则详见 semver 文档</li>
+<li>^version “兼容版本”具体规则详见 semver 文档</li>
+<li>1.2.x 仅一点二点几的版本</li>
+<li>http:&#x2F;&#x2F;… 见下面 url 作为 denpendencies 的说明</li>
+<li><ul>
+<li>任何版本</li>
+</ul>
+</li>
+<li>“” 空字符，和*相同</li>
+<li>version1 - version2 相当于 &gt;&#x3D;version1 &lt;&#x3D;version2.</li>
+<li>range1 || range2 范围 1 和范围 2 满足任意一个都行</li>
+<li>git… 见下面 git url 作为 denpendencies 的说明</li>
+<li>user&#x2F;repo See 见下面 GitHub 仓库的说明</li>
+<li>tag 发布的一个特殊的标签，见 npm-tag 的文档 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.npmjs.com/getting-started/using-tags">https://docs.npmjs.com/getting-started/using-tags</a></li>
+<li>path&#x2F;path&#x2F;path 见下面本地模块的说明<br>下面的写法都是可以的:</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;dependencies&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;foo&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1.0.0 - 2.9999.9999&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;bar&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&gt;=1.0.2 &lt;2.1.2&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;baz&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&gt;1.0.2 &lt;=2.3.4&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;boo&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2.0.1&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;qux&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&lt;1.0.0 || &gt;=2.3.1 &lt;2.4.5 || &gt;=2.5.2 &lt;3.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;asd&quot;</span><span class="punctuation">:</span> <span class="string">&quot;http://asdf.com/asdf.tar.gz&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;til&quot;</span><span class="punctuation">:</span> <span class="string">&quot;~1.2&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;elf&quot;</span><span class="punctuation">:</span> <span class="string">&quot;~1.2.3&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;two&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2.x&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;thr&quot;</span><span class="punctuation">:</span> <span class="string">&quot;3.3.x&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;lat&quot;</span><span class="punctuation">:</span> <span class="string">&quot;latest&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;dyl&quot;</span><span class="punctuation">:</span> <span class="string">&quot;file:../dyl&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="URLs-as-Dependencies"><a href="#URLs-as-Dependencies" class="headerlink" title="URLs as Dependencies"></a>URLs as Dependencies</h2><p>在版本范围的地方可以写一个 url 指向一个压缩包，模块安装的时候会把这个压缩包下载下来安装到模块本地。</p>
+<h2 id="Git-URLs-as-Dependencies"><a href="#Git-URLs-as-Dependencies" class="headerlink" title="Git URLs as Dependencies"></a>Git URLs as Dependencies</h2><p>Git url 可以像下面一样:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git://github.com/user/project.git#commit-ish</span><br><span class="line">git+ssh://user@hostname:project.git#commit-ish</span><br><span class="line">git+ssh://user@hostname/project.git#commit-ish</span><br><span class="line">git+http://user@hostname/project/blah.git#commit-ish</span><br><span class="line">git+https://user@hostname/project/blah.git#commit-ish</span><br></pre></td></tr></table></figure>
+
+<p>commit-ish 可以是任意标签，哈希值，或者可以检出的分支，默认是 master 分支。</p>
+<h2 id="GitHub-URLs"><a href="#GitHub-URLs" class="headerlink" title="GitHub URLs"></a>GitHub URLs</h2><p>支持 github 的 username&#x2F;modulename 的写法，#后边可以加后缀写明分支 hash 或标签：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;foo&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;0.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;dependencies&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;express&quot;</span><span class="punctuation">:</span> <span class="string">&quot;visionmedia/express&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;mocha&quot;</span><span class="punctuation">:</span> <span class="string">&quot;visionmedia/mocha#4727d357ea&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Local-Paths"><a href="#Local-Paths" class="headerlink" title="Local Paths"></a>Local Paths</h2><p>npm2.0.0 版本以上可以提供一个本地路径来安装一个本地的模块，通过 npm install xxx –save 来安装，格式如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">../foo/bar</span><br><span class="line">~/foo/bar</span><br><span class="line">./foo/bar</span><br><span class="line">/foo/bar</span><br></pre></td></tr></table></figure>
+
+<p>package.json 生成的相对路径如下:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;baz&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;dependencies&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;bar&quot;</span><span class="punctuation">:</span> <span class="string">&quot;file:../foo/bar&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>这种属性在离线开发或者测试需要用 npm install 的情况，又不想自己搞一个 npm server 的时候有用，但是发布模块到公共仓库时不应该使用这种属性。</p>
+<h2 id="devDependencies"><a href="#devDependencies" class="headerlink" title="devDependencies"></a>devDependencies</h2><p>如果有人想要下载并使用你的模块，也许他们并不希望或需要下载一些你在开发过程中使用的额外的测试或者文档框架。<br>在这种情况下，最好的方法是把这些依赖添加到 devDependencies 属性的对象中。<br>这些模块会在 npm link 或者 npm install 的时候被安装，也可以像其他 npm 配置一样被管理，详见 npm 的 config 文档。<br>对于一些跨平台的构建任务，例如把 CoffeeScript 编译成 JavaScript，就可以通过在 package.json 的 script 属性里边配置 prepublish 脚本来完成这个任务，然后需要依赖的 coffee-script 模块就写在 devDependencies 属性种。<br>例如:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ethopia-waza&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;description&quot;</span><span class="punctuation">:</span> <span class="string">&quot;a delightfully fruity coffee varietal&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1.2.3&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;devDependencies&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;coffee-script&quot;</span><span class="punctuation">:</span> <span class="string">&quot;~1.6.3&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;prepublish&quot;</span><span class="punctuation">:</span> <span class="string">&quot;coffee -o lib/ -c src/waza.coffee&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;main&quot;</span><span class="punctuation">:</span> <span class="string">&quot;lib/waza.js&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>prepublish 脚本会在发布之前运行，因此用户在使用之前就不用再自己去完成编译的过程了。在开发模式下，运行 npm install 也会执行这个脚本（见 npm script 文档），因此可以很方便的调试。</p>
+<h2 id="peerDependencies"><a href="#peerDependencies" class="headerlink" title="peerDependencies"></a>peerDependencies</h2><p>有时候做一些插件开发，比如 grunt 等工具的插件，它们往往是在 grunt 的某个版本的基础上开发的，而在他们的代码中并不会出现 require(“grunt”)这样的依赖，dependencies 配置里边也不会写上 grunt 的依赖，为了说明此模块只能作为插件跑在宿主的某个版本范围下，可以配置 peerDependencies：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;tea-latte&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1.3.5&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;peerDependencies&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;tea&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2.x&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>上面这个配置确保再 npm install 的时候 tea-latte 会和 2.x 版本的 tea 一起安装，而且它们两个的依赖关系是同级的：<br>├── <a href="mailto:&#116;&#x65;&#x61;&#45;&#108;&#x61;&#x74;&#x74;&#101;&#x40;&#49;&#x2e;&#51;&#46;&#53;" rel="external nofollow noreferrer">&#116;&#x65;&#x61;&#45;&#108;&#x61;&#x74;&#x74;&#101;&#x40;&#49;&#x2e;&#51;&#46;&#53;</a><br>└── <a href="mailto:&#116;&#101;&#97;&#x40;&#x32;&#x2e;&#x32;&#46;&#x30;" rel="external nofollow noreferrer">&#116;&#101;&#97;&#x40;&#x32;&#x2e;&#x32;&#46;&#x30;</a><br>这个配置的目的是让 npm 知道，如果要使用此插件模块，请确保安装了兼容版本的宿主模块。</p>
+<h2 id="bundledDependencies"><a href="#bundledDependencies" class="headerlink" title="bundledDependencies"></a>bundledDependencies</h2><p>上面的单词少个 d，写成 bundleDependencies 也可以。<br>指定发布的时候会被一起打包的模块。</p>
+<h2 id="optionalDependencies"><a href="#optionalDependencies" class="headerlink" title="optionalDependencies"></a>optionalDependencies</h2><p>如果一个依赖模块可以被使用， 同时你也希望在该模块找不到或无法获取时 npm 继续运行，你可以把这个模块依赖放到 optionalDependencies 配置中。这个配置的写法和 dependencies 的写法一样，不同的是这里边写的模块安装失败不会导致 npm install 失败。<br>当然，这种模块就需要你自己在代码中处理模块确实的情况了，例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="keyword">var</span> foo = <span class="built_in">require</span>(<span class="string">&#x27;foo&#x27;</span>);</span><br><span class="line">  <span class="keyword">var</span> fooVersion = <span class="built_in">require</span>(<span class="string">&#x27;foo/package.json&#x27;</span>).<span class="property">version</span>;</span><br><span class="line">&#125; <span class="keyword">catch</span> (er) &#123;</span><br><span class="line">  foo = <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (<span class="title function_">notGoodFooVersion</span>(fooVersion)) &#123;</span><br><span class="line">  foo = <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// .. then later in your program ..</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (foo) &#123;</span><br><span class="line">  foo.<span class="title function_">doFooThings</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>optionalDependencies 中的配置会覆盖 dependencies 中的配置，最好只在一个地方写。</p>
+<h2 id="engines"><a href="#engines" class="headerlink" title="engines"></a>engines</h2><p>你可以指定项目运行的 node 版本范围，如下：<br>{ “engines” : { “node” : “&gt;&#x3D;0.10.3 &lt;0.12” } }<br>和 dependencies 一样，如果你不指定版本范围或者指定为*，任何版本的 node 都可以。<br>也可以指定一些 npm 版本可以正确的安装你的模块，例如：<br>{ “engines” : { “npm” : “~1.0.20” } }<br>要注意的是，除非你设置了 engine-strict 属性，engines 属性是仅供参考的。</p>
+<h2 id="engineStrict"><a href="#engineStrict" class="headerlink" title="engineStrict"></a>engineStrict</h2><p>注意：这个属性已经弃用，将在 npm 3.0.0 版本干掉。</p>
+<h2 id="os"><a href="#os" class="headerlink" title="os"></a>os</h2><p>可以指定你的模块只能在哪个操作系统上跑：<br>“os” : [ “darwin”, “linux” ]<br>也可以指定黑名单而不是白名单：<br>“os” : [ “!win32” ]<br>服务的操作系统是由 process.platform 来判断的，这个属性允许黑白名单同时存在，虽然没啥必要这样搞…</p>
+<h2 id="cpu"><a href="#cpu" class="headerlink" title="cpu"></a>cpu</h2><p>限制模块只能在某某 cpu 架构下运行<br>“cpu” : [ “x64”, “ia32” ]<br>同样可以设置黑名单:<br>“cpu” : [ “!arm”, “!mips” ]<br>cpu 架构通过 process.arch 判断</p>
+<h2 id="preferGlobal"><a href="#preferGlobal" class="headerlink" title="preferGlobal"></a>preferGlobal</h2><p>如果您的软件包主要用于安装到全局的命令行应用程序，那么该值设置为 true ，如果它被安装在本地，则提供一个警告。实际上该配置并没有阻止用户把模块安装到本地，只是防止该模块被错误的使用引起一些问题。</p>
+<h2 id="private"><a href="#private" class="headerlink" title="private"></a>private</h2><p>如果这个属性被设置为 true，npm 将拒绝发布它，这是为了防止一个私有模块被无意间发布出去。如果你只想让模块被发布到一个特定的 npm 仓库，如一个内部的仓库，可与在下面的 publishConfig 中配置仓库参数。</p>
+<h2 id="publishConfig"><a href="#publishConfig" class="headerlink" title="publishConfig"></a>publishConfig</h2><p>这个配置是会在模块发布时用到的一些值的集合。如果你不想模块被默认被标记为最新的，或者默认发布到公共仓库，可以在这里配置 tag 或仓库地址。</p>
+<h2 id="DEFAULT-VALUES"><a href="#DEFAULT-VALUES" class="headerlink" title="DEFAULT VALUES"></a>DEFAULT VALUES</h2><p>npm 设置了一些默认参数，如：<br>“scripts”: {“start”: “node server.js”}<br>如果模块根目录下有一个 server.js 文件，那么 npm start 会默认运行这个文件。<br>“scripts”:{“preinstall”: “node-gyp rebuild”}<br>如果模块根目录下有 binding.gyp, npm 将默认用 node-gyp 来编译 preinstall 的脚本<br>“contributors”: […]<br>若模块根目录下有 AUTHORS 文件，则 npm 会按 Name (url)格式解析每一行的数据添加到 contributors 中，可以用#添加行注释</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.zoucz.com/">邹成卓 (zoucz)</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zoucz.com/blog/2016/02/17/npm-package/">https://zoucz.com/blog/2016/02/17/npm-package/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">此文章版权归原作者所有，如有转载，请注明来自原作者</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/npm/">npm</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.pixabay.com/photo/2023/02/04/07/38/cherry-blossoms-7766588_1280.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/b06ffa7b2fa2/" title="资源"><img class="cover" src="https://cdn.pixabay.com/photo/2023/02/04/07/50/daisy-7766609_1280.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">资源</div></div></a></div><div class="next-post pull-right"><a href="/321da28b4985/" title="如何根据系统主题自动响应CSS深色模式"><img class="cover" src="https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200427163531.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">如何根据系统主题自动响应CSS深色模式</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://cdn.jsdelivr.net/gh/ytppp/ytpblog-static-source-store/img/logo.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">杨庭培</div><div class="author-info__description">芝兰生于深谷，不以无人而不芳。君子修身养德，不以穷困而改志。</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">45</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/ytppp"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ytppp" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:651003708@qq.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎您，来到我的个人博客。孔子云：“有朋自远方来，不亦乐乎！”，您的到来，将带来双倍的快乐！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#name"><span class="toc-number">2.</span> <span class="toc-text">name</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#license"><span class="toc-number">3.</span> <span class="toc-text">license</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%92%8C%E7%94%A8%E6%88%B7%E7%9B%B8%E5%85%B3%E7%9A%84%E5%B1%9E%E6%80%A7-author-contributors"><span class="toc-number">4.</span> <span class="toc-text">和用户相关的属性: author, contributors</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#files"><span class="toc-number">5.</span> <span class="toc-text">files</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#main"><span class="toc-number">6.</span> <span class="toc-text">main</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bin"><span class="toc-number">7.</span> <span class="toc-text">bin</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#man"><span class="toc-number">8.</span> <span class="toc-text">man</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#directories"><span class="toc-number">9.</span> <span class="toc-text">directories</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#directories-lib"><span class="toc-number">9.1.</span> <span class="toc-text">directories.lib</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#directories-bin"><span class="toc-number">9.2.</span> <span class="toc-text">directories.bin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#directories-man"><span class="toc-number">9.3.</span> <span class="toc-text">directories.man</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#directories-doc"><span class="toc-number">9.4.</span> <span class="toc-text">directories.doc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#directories-example"><span class="toc-number">9.5.</span> <span class="toc-text">directories.example</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#repository"><span class="toc-number">10.</span> <span class="toc-text">repository</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#scripts"><span class="toc-number">11.</span> <span class="toc-text">scripts</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#config"><span class="toc-number">12.</span> <span class="toc-text">config</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dependencies"><span class="toc-number">13.</span> <span class="toc-text">dependencies</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#URLs-as-Dependencies"><span class="toc-number">14.</span> <span class="toc-text">URLs as Dependencies</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git-URLs-as-Dependencies"><span class="toc-number">15.</span> <span class="toc-text">Git URLs as Dependencies</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GitHub-URLs"><span class="toc-number">16.</span> <span class="toc-text">GitHub URLs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Local-Paths"><span class="toc-number">17.</span> <span class="toc-text">Local Paths</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#devDependencies"><span class="toc-number">18.</span> <span class="toc-text">devDependencies</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#peerDependencies"><span class="toc-number">19.</span> <span class="toc-text">peerDependencies</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bundledDependencies"><span class="toc-number">20.</span> <span class="toc-text">bundledDependencies</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#optionalDependencies"><span class="toc-number">21.</span> <span class="toc-text">optionalDependencies</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#engines"><span class="toc-number">22.</span> <span class="toc-text">engines</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#engineStrict"><span class="toc-number">23.</span> <span class="toc-text">engineStrict</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#os"><span class="toc-number">24.</span> <span class="toc-text">os</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cpu"><span class="toc-number">25.</span> <span class="toc-text">cpu</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#preferGlobal"><span class="toc-number">26.</span> <span class="toc-text">preferGlobal</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#private"><span class="toc-number">27.</span> <span class="toc-text">private</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#publishConfig"><span class="toc-number">28.</span> <span class="toc-text">publishConfig</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DEFAULT-VALUES"><span class="toc-number">29.</span> <span class="toc-text">DEFAULT VALUES</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/d978f39b1ae8/" title="ruby问题汇总"><img src="https://cdn.pixabay.com/photo/2023/02/07/14/45/snow-7774312_1280.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ruby问题汇总"/></a><div class="content"><a class="title" href="/d978f39b1ae8/" title="ruby问题汇总">ruby问题汇总</a><time datetime="2023-08-10T05:54:13.386Z" title="发表于 2023-08-10 13:54:13">2023-08-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/fd18c431464a/" title="基于docker 搭建 ruby开发环境"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="基于docker 搭建 ruby开发环境"/></a><div class="content"><a class="title" href="/fd18c431464a/" title="基于docker 搭建 ruby开发环境">基于docker 搭建 ruby开发环境</a><time datetime="2023-08-10T05:54:13.386Z" title="发表于 2023-08-10 13:54:13">2023-08-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/b42a9496ae02/" title="Docker 学习小计"><img src="https://cdn.pixabay.com/photo/2023/02/04/07/38/cherry-blossoms-7766587_1280.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Docker 学习小计"/></a><div class="content"><a class="title" href="/b42a9496ae02/" title="Docker 学习小计">Docker 学习小计</a><time datetime="2023-08-10T05:54:13.382Z" title="发表于 2023-08-10 13:54:13">2023-08-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/f6891fe0b305/" title="计划"><img src="https://cdn.pixabay.com/photo/2023/02/08/15/10/sculpture-7776861_1280.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="计划"/></a><div class="content"><a class="title" href="/f6891fe0b305/" title="计划">计划</a><time datetime="2022-05-09T03:22:19.000Z" title="发表于 2022-05-09 11:22:19">2022-05-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/712bc1ec6dda/" title="俄罗斯总理的几何题"><img src="https://cdn.jsdelivr.net/gh/ytppp/ytpblog-image-store/img/bg2021092204.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="俄罗斯总理的几何题"/></a><div class="content"><a class="title" href="/712bc1ec6dda/" title="俄罗斯总理的几何题">俄罗斯总理的几何题</a><time datetime="2021-12-01T06:51:59.000Z" title="发表于 2021-12-01 14:51:59">2021-12-01</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 杨庭培</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><a href="/rss2.xml">RSS2 订阅</a><a href="/atom.xml">Atom 订阅</a><a href="icp链接"><img class="icp-icon" src="icp图片"><span>备案号：xxxxxx</span></a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>function getGiscusTheme (theme) {
+  return theme === 'dark' ? 'dark' : 'light'
+}
+
+function loadGiscus () {
+  const config = Object.assign({
+    src: 'https://giscus.app/client.js',
+    'data-repo': 'ytppp/ytpblog-source-store',
+    'data-repo-id': 'MDEwOlJlcG9zaXRvcnkzMjcxNzI1NDA=',
+    'data-category-id': 'DIC_kwDOE4BBvM4CWRYH',
+    'data-mapping': 'pathname',
+    'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+    'data-reactions-enabled': '1',
+    crossorigin: 'anonymous',
+    async: true
+  },{"data-mapping":"og:title","data-lang":"zh-CN","data-input-position":"top"})
+
+  let ele = document.createElement('script')
+  for (let key in config) {
+    ele.setAttribute(key, config[key])
+  }
+  document.getElementById('giscus-wrap').insertAdjacentElement('afterbegin',ele)
+}
+
+function changeGiscusTheme (theme) {
+  function sendMessage(message) {
+    const iframe = document.querySelector('iframe.giscus-frame')
+    if (!iframe) return
+    iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app')
+  }
+
+  sendMessage({
+    setConfig: {
+      theme: getGiscusTheme(theme)
+    }
+  });
+}
+
+btf.addModeChange('giscus', changeGiscusTheme)
+
+if ('Giscus' === 'Giscus' || !true) {
+  if (true) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+  else loadGiscus()
+} else {
+  function loadOtherComment () {
+    loadGiscus()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="f6891fe0b305/" alt=""><img width="48" height="48" src="https://cdn.pixabay.com/photo/2023/02/08/15/10/sculpture-7776861_1280.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-05-09</span><a class="blog-slider__title" href="f6891fe0b305/" alt="">计划</a><div class="blog-slider__text">我工作、学习、生活等的计划，每周周日记录一次</div><a class="blog-slider__button" href="f6891fe0b305/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="ca3b38e3ee3f/" alt=""><img width="48" height="48" src="https://cdn.jsdelivr.net/gh/ytppp/ytpblog-image-store/img/4bba972a094eb1bdc8cbbc55e2bd4ddf.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2021-01-11</span><a class="blog-slider__title" href="ca3b38e3ee3f/" alt="">我为什么会搭建这个博客</a><div class="blog-slider__text">很多人的博客都有一篇文章讲自己为什么要搭建自己的博客的，今天我也来说说我自己吧！</div><a class="blog-slider__button" href="ca3b38e3ee3f/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="cefe4cc0f1a7/" alt=""><img width="48" height="48" src="https://cdn.jsdelivr.net/gh/ytppp/ytpblog-image-store/img/20210205000001.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2021-02-05</span><a class="blog-slider__title" href="cefe4cc0f1a7/" alt="">那些很燃的文言文</a><div class="blog-slider__text">本文用于收录自己喜欢的一些很燃的文言文，以传播知识为用。</div><a class="blog-slider__button" href="cefe4cc0f1a7/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="df066af7196d/" alt=""><img width="48" height="48" src="https://cdn.jsdelivr.net/gh/ytppp/ytpblog-image-store/img/95db2bd611d144e596026143d02fba44_tplv-k3u1fbpfcp-watermark.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2021-06-25</span><a class="blog-slider__title" href="df066af7196d/" alt="">Git分支管理规范化</a><div class="blog-slider__text">规范化 Git 分支管理</div><a class="blog-slider__button" href="df066af7196d/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="7022355bc05f/" alt=""><img width="48" height="48" src="https://cdn.pixabay.com/photo/2023/02/07/14/45/snow-7774312_1280.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2021-02-20</span><a class="blog-slider__title" href="7022355bc05f/" alt="">Sql基础知识</a><div class="blog-slider__text">不可知其源</div><a class="blog-slider__button" href="7022355bc05f/" alt="">详情   </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = '/';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer data-pjax src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><!-- hexo injector body_end end --></body></html>
